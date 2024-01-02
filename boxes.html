@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lemons UGC | Console Box Pack</title>
+    <link rel="icon" type="image/x-icon" href="/Images/icon.png">
+    <style>
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background-color: #1a1a2e;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            color: #f8f8f2;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #5d4e70;
+            padding: 20px 0;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        p {
+            font-size: 1.2em;
+        }
+
+        section {
+            flex: 1;
+            padding: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 300px; /* Adjust the max height as needed */
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #bd93f9;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #bd93f9;
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+
+        footer {
+            background-color: #5d4e70;
+            padding: 10px 0;
+        }
+        
+        .update-section {
+            margin-top: 30px; /* Increased gap between version and updates */
+            text-align: center; /* Center the entire updates section horizontally */
+            border: 2px solid #bd93f9; /* Add border around the updates section */
+            padding: 10px; /* Add padding inside the border */
+            max-width: 600px; /* Set max-width for the updates box */
+            margin-left: auto; /* Center the box horizontally */
+            margin-right: auto; /* Center the box horizontally */
+        }
+
+        .update-version {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 15px; /* Increased space between version and updates */
+        }
+
+        .update-changes {
+            list-style-type: none; /* Remove default list styles */
+            padding: 0;
+            margin: 0;
+            text-align: left; /* Align the entire list to the left */
+        }
+
+        .update-changes li {
+            margin-bottom: 10px; /* Add some spacing between items */
+        }
+    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap">
+</head>
+<body>
+    <header>
+        <h1>Squishylemon's EmuVR UGC</h1>
+    </header>
+
+    <section>
+        <h2>Console Box Pack</h2>
+        <p>Version: 0.2</p>
+        
+        <!-- Description -->
+        <p>Collection of console boxes, a work in progress with more additions to come. Each box features a damaged version, as if it has withstood the test of time, all crafted with a low-poly count. Current consoles PS2 both fat and slim, PS1, Sega Saturn, Sega Dreamcast, Commodore 64</p>
+
+        <!-- Extra Images -->
+        <img src="Images/Boxes/c64.png" alt="Commodore 64">
+        <img src="Images/Boxes/dreamcast.png" alt="Sega Dreamcast">
+        <img src="Images/Boxes/ps1.png" alt="Playstation 1">
+        <img src="Images/Boxes/ps2s.png" alt="Playstation 2 Slim">
+        <img src="Images/Boxes/ps2f.png" alt="Playstation 2 Fat">
+        <img src="Images/Boxes/satu.png" alt="Sega Saturn">
+
+        <!-- Download Button -->
+        <a href="Downloads/box_pack.zip" class="buttons">Download</a>
+
+        <!-- Back Button -->
+        <a href="#" onclick="goBack()">Back</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Retro Mods. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

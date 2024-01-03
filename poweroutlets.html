@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lemons UGC | Power Outlets & Surge Protectors</title>
+    <link rel="shortcut icon" type="image/png" href="/Images/favicon.png">
+    <style>
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background-color: #1a1a2e;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            color: #f8f8f2;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #5d4e70;
+            padding: 20px 0;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        p {
+            font-size: 1.2em;
+        }
+
+        section {
+            flex: 1;
+            padding: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 300px; /* Adjust the max height as needed */
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #bd93f9;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #bd93f9;
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+
+        footer {
+            background-color: #5d4e70;
+            padding: 10px 0;
+        }
+
+        .update-section {
+            margin-top: 30px; /* Increased gap between version and updates */
+            text-align: center; /* Center the entire updates section horizontally */
+            border: 2px solid #bd93f9; /* Add border around the updates section */
+            padding: 10px; /* Add padding inside the border */
+            max-width: 600px; /* Set max-width for the updates box */
+            margin-left: auto; /* Center the box horizontally */
+            margin-right: auto; /* Center the box horizontally */
+        }
+
+        .update-version {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 15px; /* Increased space between version and updates */
+        }
+
+        .update-changes {
+            list-style-type: none; /* Remove default list styles */
+            padding: 0;
+            margin: 0;
+            text-align: left; /* Align the entire list to the left */
+        }
+
+        .update-changes li {
+            margin-bottom: 10px; /* Add some spacing between items */
+        }
+
+        .credits-section {
+            text-align: center; /* Center the entire credits section horizontally */
+            margin-top: 20px; /* Add some space between updates and credits */
+        }
+
+        .credits-list {
+            list-style-type: none; /* Remove default list styles */
+            padding: 0;
+            margin: 0;
+        }
+
+        .credits-list li {
+            margin-bottom: 10px; /* Add some spacing between credits items */
+        }
+    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap">
+</head>
+<body>
+    <header>
+        <h1>Squishylemon's EmuVR UGC</h1>
+    </header>
+
+    <section>
+        <h2>Power Outlets & Surge Protectors</h2>
+        <p>Version: 1.0</p>
+        
+        <!-- Description -->
+        <p>A UGC that allows you to plug in compatible consoles into outlets or surge protectors. There are major restrictions to what can be done at the moment, and a very limited number of consoles are supported. If you make UGCs, especially for new systems, use the power cable or peripheral cable to allow it to plug into the wall. As mentioned before, there are limitations. Firstly, due to the current UGC modding stage, you can only have one of each cable for systems, limiting the power outlets and surge protectors to two slots. I still want to leave the controller's cable free. Secondly, because of that limitation, you cannot connect surge protectors to outlets; only consoles can be connected to them. Additionally, because the outlets and surges use peripheral cables, it can technically be plugged into slots it should not if a console uses the peripheral cables for something else.</p>
+
+        <!-- Extra Images -->
+        <img src="Images/Power/au_fullshot_outlet.png" alt="Full Setup AU Outlet">
+        <img src="Images/Power/au_fullshot_surge.png" alt="Full Setup AU Surge">
+        <img src="Images/Power/au_outlet.png" alt="AU Outlet">
+        <img src="Images/Power/au_surge.png" alt="AU Surge Protector">
+        <img src="Images/Power/us_fullshot_outlet.png" alt="Full Setup US Outlet">
+        <img src="Images/Power/us_fullshot_surge.png" alt="Full Setup US Surge">
+        <img src="Images/Power/us_outlet.png" alt="US Outlet">
+        <img src="Images/Power/us_surge.png" alt="US Surge Protector">
+
+        <!-- Download Button -->
+        <a href="Downloads/poweroutlets.zip" download class="buttons">Download</a>
+
+       
+
+        <!-- Credits Section -->
+        <div class="credits-section">
+            <h3>Credits</h3>
+            <ul class="credits-list">
+                <li><a href="#missing">US Plug</a></li>
+                <li><a href="#missing">AU Plug</a></li>
+                <li><a href="https://sketchfab.com/3d-models/wall-power-outlet-type-i-71539323436c4d93a1532f4cb76252a8">AU Outlet</a></li>
+                <li><a href="https://sketchfab.com/3d-models/outlet-192d0b1de17f4fcdbfeca3fe873c7bdf">US Outlet</a></li>
+                <li><a href="https://sketchfab.com/3d-models/power-strip-extension-lead-2180b1f7b55b433285cbe08181a9e88a">Surge Protector</a></li>
+                <!-- Add more credits as needed -->
+            </ul>
+        </div>
+
+        <!-- Back Button -->
+        <a href="#" onclick="goBack()">Back</a>
+    </section>
+
+    <footer>
+        <p>2024 Lemons UGC's</p>
+    </footer>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

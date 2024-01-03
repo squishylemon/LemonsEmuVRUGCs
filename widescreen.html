@@ -82,6 +82,33 @@
         .credits-list li {
             margin-bottom: 10px; /* Add some spacing between credits items */
         }
+
+        .update-section {
+            margin-top: 30px; /* Increased gap between version and updates */
+            text-align: center; /* Center the entire updates section horizontally */
+            border: 2px solid #bd93f9; /* Add border around the updates section */
+            padding: 10px; /* Add padding inside the border */
+            max-width: 600px; /* Set max-width for the updates box */
+            margin-left: auto; /* Center the box horizontally */
+            margin-right: auto; /* Center the box horizontally */
+        }
+
+        .update-version {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 15px; /* Increased space between version and updates */
+        }
+
+        .update-changes {
+            list-style-type: none; /* Remove default list styles */
+            padding: 0;
+            margin: 0;
+            text-align: left; /* Align the entire list to the left */
+        }
+
+        .update-changes li {
+            margin-bottom: 10px; /* Add some spacing between items */
+        }
     </style>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap">
 </head>
@@ -92,7 +119,7 @@
 
     <section>
         <h2>Ultrawide CRT Monitor</h2>
-        <p>Version: 1.0</p>
+        <p>Version: 1.01</p>
         
         <!-- Description -->
         <p>A really long crt monitor to stretch out your play sessions!. The model was from sketchfab and edited a bit</p>
@@ -105,6 +132,14 @@
 
         <!-- Download Button -->
         <a href="Downloads/Retro_Widescreen_c423a26c.ugc" download class="buttons">Download</a>
+
+        <div class="update-section">
+            <h3>Updates</h3>
+            <div class="update-version">Version 1.01</div>
+            <ul class="update-changes">
+                <li>- Added power support.</li>
+            </ul>
+        </div>
 
         <!-- Credits Section -->
         <div class="credits-section">

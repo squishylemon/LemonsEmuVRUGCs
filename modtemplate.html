@@ -109,6 +109,36 @@
         .credits-list li {
             margin-bottom: 10px; /* Add some spacing between credits items */
         }
+        
+        .download-name {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 15px; /* Increased space between version and updates */
+        }
+        
+        .optional-downloads-section {
+            margin-top: 30px; /* Increased gap between version and updates */
+            text-align: center; /* Center the entire updates section horizontally */
+            border: 2px solid #bd93f9; /* Add border around the updates section */
+            padding: 10px; /* Add padding inside the border */
+            max-width: 600px; /* Set max-width for the updates box */
+            margin-left: auto; /* Center the box horizontally */
+            margin-right: auto; /* Center the box horizontally */
+        }
+        
+        .optional-downloads-section .download-name {
+            margin-top: 15px; /* Add vertical spacing between the optional downloads button and each optional file */
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 15px; /* Increased space between version and updates */
+        }
+        
+        .download-features {
+            list-style-type: none; /* Remove default list styles */
+            padding: 0;
+            margin: 0;
+            text-align: left; /* Align the entire list to the left */
+        }
     </style>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap">
 </head>
@@ -130,6 +160,28 @@
 
         <!-- Download Button -->
         <a href="Downloads/mod_template.zip" download class="buttons">Download</a>
+        
+        <!-- Optional Downloads Section -->
+        <div class="optional-downloads-section">
+            <h3>Optional Downloads</h3>
+            
+            <div class="download-name">Optional File 1</div>
+            <ul class="download-features">
+                <li>- Adds new feature.</li>
+                <li>- Improved performance.</li>
+                <li>- Fixed bugs.</li>
+            </ul>
+            <a href="Downloads/mod_template_optional1.zip" download class="buttons">Download</a>
+            
+            <div class="download-name">Optional File 2</div>
+            <ul class="download-features">
+                <li>- Adds new feature.</li>
+                <li>- Improved performance.</li>
+                <li>- Fixed bugs.</li>
+            </ul>
+            <a href="Downloads/mod_template_optional2.zip" download class="buttons">Download</a>
+            <!-- Add more option files as needed -->
+        </div>
 
         <!-- Updates Section -->
         <div class="update-section">

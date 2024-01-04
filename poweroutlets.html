@@ -109,6 +109,36 @@
         .credits-list li {
             margin-bottom: 10px; /* Add some spacing between credits items */
         }
+        
+        .download-name {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 15px; /* Increased space between version and updates */
+        }
+        
+        .optional-downloads-section {
+            margin-top: 30px; /* Increased gap between version and updates */
+            text-align: center; /* Center the entire updates section horizontally */
+            border: 2px solid #bd93f9; /* Add border around the updates section */
+            padding: 10px; /* Add padding inside the border */
+            max-width: 600px; /* Set max-width for the updates box */
+            margin-left: auto; /* Center the box horizontally */
+            margin-right: auto; /* Center the box horizontally */
+        }
+        
+        .optional-downloads-section .download-name {
+            margin-top: 15px; /* Add vertical spacing between the optional downloads button and each optional file */
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 15px; /* Increased space between version and updates */
+        }
+        
+        .download-features {
+            list-style-type: none; /* Remove default list styles */
+            padding: 0;
+            margin: 0;
+            text-align: left; /* Align the entire list to the left */
+        }
     </style>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap">
 </head>
@@ -137,6 +167,23 @@
         <!-- Download Button -->
         <a href="Downloads/poweroutlets.zip" download class="buttons">Download</a>
 
+        <!-- Optional Downloads Section -->
+        <div class="optional-downloads-section">
+            <h3>Optional Downloads</h3>
+            
+            <div class="download-name">Fake Plugs</div>
+            <ul class="download-features">
+                <li>- Simple Extra that adds power connectors to (pretend) plug into consoles unsupported</li>
+                <li>- Plugs added:</li>
+                <li>- C13</li>
+                <li>- C7</li>
+                <li>- C5</li>
+                <li>- DC</li>
+            </ul>
+            <a href="Downloads/poweroutlets_extra.zip" download class="buttons">Download</a>
+  
+        </div>
+
         <div class="update-section">
             <h3>Updates</h3>
             <div class="update-version">Version 1.01</div>
@@ -156,6 +203,7 @@
                 <li><a href="https://sketchfab.com/3d-models/wall-power-outlet-type-i-71539323436c4d93a1532f4cb76252a8">AU Outlet</a></li>
                 <li><a href="https://sketchfab.com/3d-models/outlet-192d0b1de17f4fcdbfeca3fe873c7bdf">US Outlet</a></li>
                 <li><a href="https://sketchfab.com/3d-models/power-strip-extension-lead-2180b1f7b55b433285cbe08181a9e88a">Surge Protector</a></li>
+                <li><a href="https://discord.com/channels/494312532782088203/1192023250209882152/1192023250209882152">Fake Plug Models</a></li>
                 <!-- Add more credits as needed -->
             </ul>
         </div>

@@ -233,9 +233,14 @@
 
     <!-- Include the Three.js library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://threejs.org/examples/js/loaders/FBXLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three/examples/js/loaders/FBXLoader.js"></script>
 
     <script>
+        import * as THREE from 'three'
+        import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
+        import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader'
+        import Stats from 'three/examples/jsm/libs/stats.module'
+
         // Create a scene
         const scene = new THREE.Scene();
 

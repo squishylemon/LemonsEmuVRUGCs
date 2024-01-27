@@ -233,12 +233,13 @@
 
     <!-- Include the Three.js library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="three/examples/js/libs/inflate.min"></script>
+    <!-- Include the inflate.min.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/three/examples/js/libs/inflate.min.js"></script>
+    <!-- Include the FBXLoader -->
     <script src="https://cdn.jsdelivr.net/npm/three/examples/js/loaders/FBXLoader.js"></script>
 
     <script>
-        
-
+        // Your JavaScript code here
         // Create a scene
         const scene = new THREE.Scene();
 
@@ -267,5 +268,6 @@
 
         animate();
     </script>
+
 </body>
 </html>

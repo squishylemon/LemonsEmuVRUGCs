@@ -95,57 +95,49 @@
             margin-bottom: 10px; /* Add some spacing between items */
         }
 
-
         .credits-section {
-            text-align: center;
-            margin-top: 20px;
+            text-align: center; /* Center the entire credits section horizontally */
+            margin-top: 20px; /* Add some space between updates and credits */
         }
 
         .credits-list {
-            list-style-type: none;
+            list-style-type: none; /* Remove default list styles */
             padding: 0;
             margin: 0;
         }
 
         .credits-list li {
-            margin-bottom: 10px;
+            margin-bottom: 10px; /* Add some spacing between credits items */
         }
-
+        
         .download-name {
             font-size: 1.5em;
             font-weight: bold;
-            margin-bottom: 15px;
+            margin-bottom: 15px; /* Increased space between version and updates */
         }
-
+        
         .optional-downloads-section {
-            margin-top: 30px;
-            text-align: center;
-            border: 2px solid #bd93f9;
-            padding: 10px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            background-color: #bd93f9; /* Purple background */
+            margin-top: 30px; /* Increased gap between version and updates */
+            text-align: center; /* Center the entire updates section horizontally */
+            border: 2px solid #bd93f9; /* Add border around the updates section */
+            padding: 10px; /* Add padding inside the border */
+            max-width: 600px; /* Set max-width for the updates box */
+            margin-left: auto; /* Center the box horizontally */
+            margin-right: auto; /* Center the box horizontally */
         }
-
+        
         .optional-downloads-section .download-name {
-            margin-top: 15px;
+            margin-top: 15px; /* Add vertical spacing between the optional downloads button and each optional file */
             font-size: 1.5em;
             font-weight: bold;
-            margin-bottom: 15px;
+            margin-bottom: 15px; /* Increased space between version and updates */
         }
-
+        
         .download-features {
-            list-style-type: none;
+            list-style-type: none; /* Remove default list styles */
             padding: 0;
             margin: 0;
-            text-align: left;
-        }
-
-        #model-preview {
-            width: 400px;
-            height: 300px; /* Adjust the height as needed */
-            margin-bottom: 20px;
+            text-align: left; /* Align the entire list to the left */
         }
     </style>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap">
@@ -165,9 +157,6 @@
         <!-- Extra Images -->
         <img src="Images/Template/extra_image_1.jpg" alt="Extra Image 1">
         <img src="Images/Template/extra_image_2.jpg" alt="Extra Image 2">
-
-        <!-- 3D Model Preview -->
-        <div id="model-preview"></div>
 
         <!-- Download Button -->
         <a href="Downloads/mod_template.zip" download class="buttons">Download</a>
@@ -231,41 +220,6 @@
         <p>2024 Lemons UGC's</p>
     </footer>
 
-    <!-- Include the Three.js library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-
-    <script>
-        // Create a scene
-        const scene = new THREE.Scene();
-
-        // Create a camera
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        camera.position.z = 5;
-
-        // Create a renderer
-        const renderer = new THREE.WebGLRenderer();
-        renderer.setSize(window.innerWidth, 300); // Set the size of the renderer
-        document.getElementById('model-preview').appendChild(renderer.domElement);
-
-        // Create a geometry
-        const geometry = new THREE.BoxGeometry();
-
-        // Create a material
-        const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-
-        // Create a mesh (combine geometry and material)
-        const cube = new THREE.Mesh(geometry, material);
-        scene.add(cube);
-
-        // Animation loop
-        function animate() {
-            requestAnimationFrame(animate);
-            cube.rotation.x += 0.01;
-            cube.rotation.y += 0.01;
-            renderer.render(scene, camera);
-        }
-
-        animate();
-    </script>
+    
 </body>
 </html>

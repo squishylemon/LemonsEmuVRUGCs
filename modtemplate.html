@@ -139,6 +139,14 @@
             margin: 0;
             text-align: left; /* Align the entire list to the left */
         }
+
+        #model-preview {
+            width: 100%;
+            max-width: 600px;
+            max-height: 400px;
+            margin: 0 auto;
+            background-color: #bd93f9;
+        }
     </style>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap">
 </head>
@@ -157,6 +165,9 @@
         <!-- Extra Images -->
         <img src="Images/Template/extra_image_1.jpg" alt="Extra Image 1">
         <img src="Images/Template/extra_image_2.jpg" alt="Extra Image 2">
+
+        <!-- 3D Model Preview -->
+        <div id="model-preview"></div>
 
         <!-- Download Button -->
         <a href="Downloads/mod_template.zip" download class="buttons">Download</a>
@@ -220,6 +231,38 @@
         <p>2024 Lemons UGC's</p>
     </footer>
 
-    
+    <!-- Include the Three.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://threejs.org/examples/js/loaders/FBXLoader.js"></script>
+
+    <script>
+        // Create a scene
+        const scene = new THREE.Scene();
+
+        // Create a camera
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.z = 5;
+
+        // Create a renderer
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(600, 400); // Set the size of the renderer
+        document.getElementById('model-preview').appendChild(renderer.domElement);
+
+        // Create an FBXLoader instance
+        const loader = new THREE.FBXLoader();
+
+        // Load FBX model
+        loader.load('3DModels/model.fbx', function (fbx) {
+            scene.add(fbx);
+        });
+
+        // Animation loop
+        function animate() {
+            requestAnimationFrame(animate);
+            renderer.render(scene, camera);
+        }
+
+        animate();
+    </script>
 </body>
 </html>

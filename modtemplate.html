@@ -181,6 +181,30 @@
             color: #f8f8f2; /* Change text color on hover */
         }
 
+        /* Download Button */
+        a.download-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #bd93f9;
+            color: #fff;
+            border: 2px solid #bd93f9;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-top: 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        a.download-button:hover {
+            background-color: #fff;
+            color: #bd93f9;
+        }
+
+        a.download-button:active {
+            transform: translateY(2px);
+        }
+
         #model-preview {
             width: 100%;
             max-width: 600px;
@@ -229,7 +253,7 @@
        <!--  <div id="model-preview"></div> -->
 
         <!-- Download Button -->
-        <a href="Downloads/mod_template.zip" download class="buttons">Download</a>
+        <a href="Downloads/mod_template.zip" download class="download-button">Download</a>
         
         <!-- Optional Downloads Section -->
         <div class="optional-downloads-section">

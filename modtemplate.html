@@ -140,6 +140,33 @@
             text-align: left; /* Align the entire list to the left */
         }
 
+        /* Contributor Section */
+        .contributor-section {
+            margin-top: 30px; /* Adjust spacing as needed */
+        }
+
+        /* Contributor */
+        .contributor {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px; /* Adjust spacing between contributors */
+        }
+
+        .contributor img {
+            width: 50px; /* Adjust image size */
+            height: 50px; /* Adjust image size */
+            border-radius: 50%; /* Make the image round */
+            margin-right: 10px; /* Adjust spacing between image and name */
+        }
+
+        .contributor a {
+            text-decoration: none;
+            color: #bd93f9; /* Adjust text color */
+            font-weight: bold;
+            font-size: 1.2em; /* Adjust font size */
+        }
+
         #model-preview {
             width: 100%;
             max-width: 600px;
@@ -166,8 +193,26 @@
         <img src="Images/Template/extra_image_1.jpg" alt="Extra Image 1">
         <img src="Images/Template/extra_image_2.jpg" alt="Extra Image 2">
 
+        <!-- Contributor Section -->
+    <div class="contributor-section">
+        <h3>Contributors</h3>
+        <!-- Contributor 1 -->
+        <div class="contributor">
+            <img src="Contributers/squishy_logo.png" alt="Contributor Image">
+            <a href="https://github.com/squishylemon">Squishylemon</a>
+        </div>
+        
+        <!-- Contributor 2 -->
+        <div class="contributor">
+            <img src="Contributers/path_to_image.png" alt="Contributor Image">
+            <a href="contributor_link">Contributor Name</a>
+        </div>
+        <!-- Add more contributors as needed -->
+    </div>
+
+
         <!-- 3D Model Preview -->
-        <div id="model-preview"></div>
+       <!--  <div id="model-preview"></div> -->
 
         <!-- Download Button -->
         <a href="Downloads/mod_template.zip" download class="buttons">Download</a>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lemons UGC | Standing Desk</title>
+    <link rel="shortcut icon" type="image/png" href="/Images/favicon.png">
+    <style>
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background-color: #1a1a2e;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            color: #f8f8f2;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #5d4e70;
+            padding: 20px 0;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        p {
+            font-size: 1.2em;
+        }
+
+        section {
+            flex: 1;
+            padding: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 300px; /* Adjust the max height as needed */
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #bd93f9;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #bd93f9;
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+
+        footer {
+            background-color: #5d4e70;
+            padding: 10px 0;
+        }
+
+        .update-section {
+            margin-top: 30px; /* Increased gap between version and updates */
+            text-align: center; /* Center the entire updates section horizontally */
+            border: 2px solid #bd93f9; /* Add border around the updates section */
+            padding: 10px; /* Add padding inside the border */
+            max-width: 600px; /* Set max-width for the updates box */
+            margin-left: auto; /* Center the box horizontally */
+            margin-right: auto; /* Center the box horizontally */
+        }
+
+        .update-version {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 15px; /* Increased space between version and updates */
+        }
+
+        .update-changes {
+            list-style-type: none; /* Remove default list styles */
+            padding: 0;
+            margin: 0;
+            text-align: left; /* Align the entire list to the left */
+        }
+
+        .update-changes li {
+            margin-bottom: 10px; /* Add some spacing between items */
+        }
+
+        .credits-section {
+            text-align: center; /* Center the entire credits section horizontally */
+            margin-top: 20px; /* Add some space between updates and credits */
+        }
+
+        .credits-list {
+            list-style-type: none; /* Remove default list styles */
+            padding: 0;
+            margin: 0;
+        }
+
+        .credits-list li {
+            margin-bottom: 10px; /* Add some spacing between credits items */
+        }
+        
+        .download-name {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 15px; /* Increased space between version and updates */
+        }
+        
+        .optional-downloads-section {
+            margin-top: 30px; /* Increased gap between version and updates */
+            text-align: center; /* Center the entire updates section horizontally */
+            border: 2px solid #bd93f9; /* Add border around the updates section */
+            padding: 10px; /* Add padding inside the border */
+            max-width: 600px; /* Set max-width for the updates box */
+            margin-left: auto; /* Center the box horizontally */
+            margin-right: auto; /* Center the box horizontally */
+        }
+        
+        .optional-downloads-section .download-name {
+            margin-top: 15px; /* Add vertical spacing between the optional downloads button and each optional file */
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 15px; /* Increased space between version and updates */
+        }
+        
+        .download-features {
+            list-style-type: none; /* Remove default list styles */
+            padding: 0;
+            margin: 0;
+            text-align: left; /* Align the entire list to the left */
+        }
+
+        /* Contributor Section */
+        .contributor-section {
+            margin-top: 30px; /* Adjust spacing as needed */
+            border: 2px solid #bd93f9; /* Add border around the contributor section */
+            padding: 20px; /* Add padding inside the border */
+            max-width: 600px; /* Set max-width for the contributor section */
+            margin-left: auto; /* Center the box horizontally */
+            margin-right: auto; /* Center the box horizontally */
+        }
+
+        /* Contributor */
+        .contributor {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px; /* Adjust spacing between contributors */
+        }
+
+        .contributor img {
+            width: 50px; /* Adjust image size */
+            height: 50px; /* Adjust image size */
+            border-radius: 50%; /* Make the image round */
+            margin-right: 10px; /* Adjust spacing between image and name */
+        }
+
+        .contributor a {
+            text-decoration: none;
+            color: #bd93f9; /* Adjust text color */
+            font-weight: bold;
+            font-size: 1.2em; /* Adjust font size */
+        }
+
+        /* Add hover effect to contributors */
+        .contributor:hover {
+            background-color: #282a36; /* Change background color on hover */
+        }
+
+        .contributor:hover a {
+            color: #f8f8f2; /* Change text color on hover */
+        }
+
+        /* Download Button */
+        a.download-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #bd93f9;
+            color: #fff;
+            border: 2px solid #bd93f9;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-top: 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        a.download-button:hover {
+            background-color: #fff;
+            color: #bd93f9;
+        }
+
+        a.download-button:active {
+            transform: translateY(2px);
+        }
+
+        #model-preview {
+            width: 100%;
+            max-width: 600px;
+            max-height: 400px;
+            margin: 0 auto;
+            background-color: #bd93f9;
+        }
+    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap">
+</head>
+<body>
+    <header>
+        <h1>Squishylemon's EmuVR UGC</h1>
+    </header>
+
+    <section>
+        <h2>Standing Desk</h2>
+        <p>Version: 1.0</p>
+        
+        <!-- Description -->
+        <p>Simple standing desk pack, this pack contains 2 standing desks one single motor and another a dual motor, has custom sounds and working animations to switch from standing to sitting</p>
+
+        <!-- Extra Images -->
+        <img src="Images/StandDesk/frontShot.png" alt="Front Shot">
+        <img src="Images/StandDesk/DeskLowerGif.gif" alt="GIF of lowering desk">
+        <img src="Images/StandDesk/emptyShot.png" alt="Empty shot of desk">
+
+       
+
+
+        <!-- 3D Model Preview -->
+       <!--  <div id="model-preview"></div> -->
+
+        <!-- Download Button -->
+        <a href="https://github.com/squishylemon/LemonsEmuVRUGCs/raw/main/Downloads/StandingDesk.zip?download=" download class="download-button">Download</a>
+        
+        
+
+        
+
+        <!-- Credits Section -->
+        <div class="credits-section">
+            <h3>Credits</h3>
+            <ul class="credits-list">
+                <li><a href="https://sketchfab.com/3d-models/standing-desk-65a7f4b06a5f4954a0d43eb8812dd165">Ryan_Nein [Standing Desk Model]</a></li>
+                
+                <!-- Add more credits as needed -->
+            </ul>
+        </div>
+
+        <!-- Back Button -->
+        <a href="index" class="buttons">Back</a>
+    </section>
+
+    <footer>
+        <p>2024 Lemons UGC's</p>
+    </footer>
+
+    <!-- Include the Three.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- Include the inflate.min.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/three/examples/js/libs/inflate.min.js"></script>
+    <!-- Include the FBXLoader -->
+    <script src="https://cdn.jsdelivr.net/npm/three/examples/js/loaders/FBXLoader.js"></script>
+
+    <script>
+        // Your JavaScript code here
+        // Create a scene
+        const scene = new THREE.Scene();
+
+        // Create a camera
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.z = 5;
+
+        // Create a renderer
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(600, 400); // Set the size of the renderer
+        document.getElementById('model-preview').appendChild(renderer.domElement);
+
+        // Create an FBXLoader instance
+        const loader = new THREE.FBXLoader();
+
+        // Load FBX model
+        loader.load('3DModels/testmodel.fbx', function (fbx) {
+            scene.add(fbx);
+        });
+
+        // Animation loop
+        function animate() {
+            requestAnimationFrame(animate);
+            renderer.render(scene, camera);
+        }
+
+        animate();
+    </script>
+
+</body>
+</html>

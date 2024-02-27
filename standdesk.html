@@ -227,10 +227,7 @@
 
         /* Download Button */
         a.download-button {
-            display: block;
-            /* Change from inline-block to block */
-            margin: 20px auto;
-            /* Auto for left and right margins */
+            display: inline-block;
             padding: 15px 30px;
             background-color: #bd93f9;
             color: #fff;
@@ -239,9 +236,24 @@
             text-decoration: none;
             font-weight: bold;
             font-size: 1.2em;
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
             transition: background-color 0.3s, color 0.3s;
         }
 
+        .custom-media-warning {
+            background-color: #ffcc00;
+            color: #333;
+            padding: 10px;
+            max-width: 600px;
+            border-radius: 5px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 20px;
+            margin-top: 20px;
+            text-align: center;
+        }
 
         a.download-button:hover {
             background-color: #fff;
@@ -286,6 +298,10 @@
 
         <!-- 3D Model Preview -->
         <!--  <div id="model-preview"></div> -->
+        
+        <div class="custom-media-warning">
+            <p>Warning: This UGC requires adding 'LemonsAnimatedFurniture' to your custom_media.text</p>
+        </div>
 
         <!-- Download Button -->
         <a href="https://github.com/squishylemon/LemonsEmuVRUGCs/raw/main/Downloads/StandingDesk.zip?download=" download

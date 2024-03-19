@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,137 +33,257 @@
             font-size: 1.2em;
         }
 
-        section {
-            flex: 1;
+        .category {
             padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid;
+            border-image: linear-gradient(to right, transparent, #5d4e70, transparent);
+            border-image-slice: 1;
         }
 
-        ul {
-            list-style-type: none;
-            padding: 0;
+        .category:last-child {
+            border-bottom: none;
         }
 
-        li {
-            margin: 20px 0;
+        .category h2 {
+            margin: 10px 0;
         }
 
-        a {
-            text-decoration: none;
-            color: #ff79c6;
-            font-weight: bold;
-            display: block;
+        .mods {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            scrollbar-width: none;
+            /* Firefox */
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            white-space: nowrap;
+            justify-content: center;
         }
 
-        img {
+        .mods::-webkit-scrollbar {
+            display: none;
+            /* Safari and Chrome */
+        }
+
+        .mod {
+            flex: 0 0 auto;
+            margin-right: 20px;
+            max-width: calc(25% - 20px);
+            /* 4 mods in a row */
+            text-align: left;
+        }
+
+        .mod img {
             max-width: 100%;
-            max-height: 200px; /* Adjust the max height as needed */
-            height: auto;
+            max-height: 200px;
             border-radius: 5px;
             margin-bottom: 10px;
-            transition: transform 0.3s ease-in-out; /* Add a smooth transition effect */
+            transition: transform 0.3s ease-in-out;
         }
 
-        img:hover {
-            transform: scale(1.1); /* Increase the scale on hover */
+        .mod img:hover {
+            transform: scale(1.1);
+        }
+
+        .buttons-container {
+            display: flex;
+            justify-content: space-between;
         }
 
         .buttons {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 10px;
-        }
-
-        button {
-            padding: 10px;
+            padding: 5px 10px;
+            /* Adjusted padding */
             background-color: #bd93f9;
             color: #fff;
             border: none;
             cursor: pointer;
             border-radius: 5px;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            /* Center text vertically */
         }
+
+        a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+            margin: auto;
+            /* Center text horizontally */
+        }
+
+        .headerText {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: bold;
+            margin-top: 10px;
+            margin-left: 10px;
+            /* Adjust margin to separate buttons */
+            display: inline-block;
+            /* Display links horizontally */
+        }
+
+
 
         footer {
             background-color: #5d4e70;
             padding: 10px 0;
         }
-        
-        .example::-webkit-scrollbar {
-        display: none;
-        }
-
-        
-        .example {
-        -ms-overflow-style: none;  /* IE and Edge */
-        scrollbar-width: none;  /* Firefox */
-        }
     </style>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap">
 </head>
+
 <body>
     <header>
         <h1>Lemon's UGC</h1>
         <p>Download all of my ugc's here for free!</p>
+        <div class="category">
+            <a class="headerText" href="underc">Suggest</a>
+            <a class="headerText" href="underc">About</a>
+            <a class="headerText" href="underc">Guides</a>
+        </div>
+
+
     </header>
 
-    <section>
-        <h2>Available Mods</h2>
-        <ul>
-            <li>
+    <section class="category">
+        <h2>Packs</h2>
+        <div class="mods">
+            <div class="mod">
                 <img src="Images/box_pack_thumbnail.png" alt="Box Pack Thumbnail">
-                <p>Box Pack</p>
-                <a href="boxes" class="buttons">Show More</a>
-            </li>
-            <li>
+                <div class="buttons-container">
+                    <div class="buttons">
+                        <a href="https://github.com/squishylemon/LemonsEmuVRUGCs/raw/main/Downloads/box_pack.zip?download=">Download</a>
+                    </div>
+                    <div class="buttons">
+                        <a href="boxes">Show More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mod">
+                <img src="Images/power_thumnail.png" alt="PoweOutlets Pack Thumbnail">
+                <div class="buttons-container">
+                    <div class="buttons">
+                        <a href="https://github.com/squishylemon/LemonsEmuVRUGCs/raw/main/Downloads/poweroutlets.zip?download=">Download</a>
+                    </div>
+                    <div class="buttons">
+                        <a href="poweroutlets">Show More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mod">
                 <img src="Images/mega_c64_pack_thumbnail.png" alt="Mega C64 Pack Thumbnail">
-                <p>Mega C64 Pack</p>
-                <a href="c64pack" class="buttons">Show More</a>
-            </li>
-            <li>
-                <img src="Images/crt_widescreen_thumbnail.png" alt="CRT Widescreen Thumbnail">
-                <p>CRT Widescreen</p>
-                <a href="widescreen" class="buttons">Show More</a>
-            </li>
-            <li>
-                <img src="Images/macse_thumbnail.png" alt="MacSE Thumbnail">
-                <p>MacSE</p>
-                <a href="macse" class="buttons">Show More</a>
-            </li>
-            <li>
-                <img src="Images/power_thumnail.png" alt="Power Outlet Pack">
-                <p>Power Outlets & Surge Protectors</p>
-                <a href="poweroutlets" class="buttons">Show More</a>
-            </li>
-            <li>
-                <img src="Images/lfig_thumnail.png" alt="LFigurines Pack">
-                <p>Lemon's Figurines Pack</p>
-                <a href="lfigurines" class="buttons">Show More</a>
-            </li>
-            <li>
-                <img src="Images/segams_thumnail.png" alt="Sega Master System Pack">
-                <p>Sega Master System Pack</p>
-                <a href="segamastersystem" class="buttons">Show More</a>
-            </li>
-            <li>
+                <div class="buttons-container">
+                    <div class="buttons">
+                        <a href="https://github.com/squishylemon/LemonsEmuVRUGCs/raw/main/Downloads/mega_c64_pack.zip?download=">Download</a>
+                    </div>
+                    <div class="buttons">
+                        <a href="c64pack">Show More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mod">
                 <img src="Images/pokemon_pack_thumnail.png" alt="Pokemon Card Pack's">
-                <p>Pokemon Card Pack's</p>
-                <a href="pokemoncardpack" class="buttons">Show More</a>
-            </li>
-            <li>
+                <div class="buttons-container">
+                    
+                    <div class="buttons">
+                        <a href="pokemoncardpack">Show More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="category">
+        <h2>Screens</h2>
+        <div class="mods">
+            <div class="mod">
+                <img src="Images/crt_widescreen_thumbnail.png" alt="CRT Widescreen Thumbnail">
+                <div class="buttons-container">
+                    <div class="buttons">
+                        <a href="Downloads/Retro_Widescreen_c423a26c.ugc">Download</a>
+                    </div>
+                    <div class="buttons">
+                        <a href="widescreen">Show More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="category">
+        <h2>Systems</h2>
+        <div class="mods">
+            <div class="mod">
+                <img src="Images/macse_thumbnail.png" alt="MacSE Thumbnail">
+                <div class="buttons-container">
+                    <div class="buttons">
+                        <a href="https://github.com/squishylemon/LemonsEmuVRUGCs/raw/main/Downloads/macse.zip?raw=true">Download</a>
+                    </div>
+                    <div class="buttons">
+                        <a href="macse">Show More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mod">
+                <img src="Images/segams_thumnail.png" alt="Sega Master System Pack">
+                <div class="buttons-container">
+                    <div class="buttons">
+                        <a href="https://github.com/squishylemon/LemonsEmuVRUGCs/raw/main/Downloads/segamastersystempack.zip?download=">Download</a>
+                    </div>
+                    <div class="buttons">
+                        <a href="segamastersystem">Show More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mod">
                 <img src="Images/segapluto_thumnail.png" alt="SEGA Pluto">
-                <p>SEGA Pluto</p>
-                <a href="segapluto" class="buttons">Show More</a>
-            </li>
-            <li>
+                <div class="buttons-container">
+                    <div class="buttons">
+                        <a href="https://github.com/squishylemon/LemonsEmuVRUGCs/raw/main/Downloads/SegaPluto.zip?download=">Download</a>
+                    </div>
+                    <div class="buttons">
+                        <a href="segapluto">Show More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="category">
+        <h2>Props</h2>
+        <div class="mods">
+            <div class="mod">
+                <img src="Images/lfig_thumnail.png" alt="LFigurines Pack">
+                <div class="buttons-container">
+                    <div class="buttons">
+                        <a href="https://github.com/squishylemon/LemonsEmuVRUGCs/raw/main/Downloads/l_figurines.zip?download=">Download</a>
+                    </div>
+                    <div class="buttons">
+                        <a href="lfigurines">Show More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mod">
                 <img src="Images/standdesk_thumnail.png" alt="Stand Desk">
-                <p>Standing Desk</p>
-                <a href="standdesk" class="buttons">Show More</a>
-            </li>
-            <!-- Add more mods as needed -->
-        </ul>
+                <div class="buttons-container">
+                    <div class="buttons">
+                        <a href="https://github.com/squishylemon/LemonsEmuVRUGCs/raw/main/Downloads/StandingDesk.zip?download=">Download</a>
+                    </div>
+                    <div class="buttons">
+                        <a href="standdesk">Show More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <footer>
         <p>2024 Lemons UGC's</p>
     </footer>
 </body>
+
 </html>

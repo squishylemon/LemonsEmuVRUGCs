@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lemons UGC | Mattel Intellivision</title>
+    <link rel="shortcut icon" type="image/x-icon" href="Images/icon.ico">
+    <style>
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background-color: #1a1a2e;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            color: #f8f8f2;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #5d4e70;
+            padding: 20px 0;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        p {
+            font-size: 1.2em;
+        }
+
+        section {
+            flex: 1;
+            padding: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 300px;
+            /* Adjust the max height as needed */
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #bd93f9;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #bd93f9;
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+
+        footer {
+            background-color: #5d4e70;
+            padding: 10px 0;
+        }
+
+        .update-section {
+            margin-top: 30px;
+            /* Increased gap between version and updates */
+            text-align: center;
+            /* Center the entire updates section horizontally */
+            border: 2px solid #bd93f9;
+            /* Add border around the updates section */
+            padding: 10px;
+            /* Add padding inside the border */
+            max-width: 600px;
+            /* Set max-width for the updates box */
+            margin-left: auto;
+            /* Center the box horizontally */
+            margin-right: auto;
+            /* Center the box horizontally */
+        }
+
+        .update-version {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            /* Increased space between version and updates */
+        }
+
+        .update-changes {
+            list-style-type: none;
+            /* Remove default list styles */
+            padding: 0;
+            margin: 0;
+            text-align: left;
+            /* Align the entire list to the left */
+        }
+
+        .update-changes li {
+            margin-bottom: 10px;
+            /* Add some spacing between items */
+        }
+
+        .credits-section {
+            text-align: center;
+            /* Center the entire credits section horizontally */
+            margin-top: 20px;
+            /* Add some space between updates and credits */
+        }
+
+        .credits-list {
+            list-style-type: none;
+            /* Remove default list styles */
+            padding: 0;
+            margin: 0;
+        }
+
+        .credits-list li {
+            margin-bottom: 10px;
+            /* Add some spacing between credits items */
+        }
+
+        .download-name {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            /* Increased space between version and updates */
+        }
+
+        .optional-downloads-section {
+            margin-top: 30px;
+            /* Increased gap between version and updates */
+            text-align: center;
+            /* Center the entire updates section horizontally */
+            border: 2px solid #bd93f9;
+            /* Add border around the updates section */
+            padding: 10px;
+            /* Add padding inside the border */
+            max-width: 600px;
+            /* Set max-width for the updates box */
+            margin-left: auto;
+            /* Center the box horizontally */
+            margin-right: auto;
+            /* Center the box horizontally */
+        }
+
+        .optional-downloads-section .download-name {
+            margin-top: 15px;
+            /* Add vertical spacing between the optional downloads button and each optional file */
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            /* Increased space between version and updates */
+        }
+
+        .download-features {
+            list-style-type: none;
+            /* Remove default list styles */
+            padding: 0;
+            margin: 0;
+            text-align: left;
+            /* Align the entire list to the left */
+        }
+
+        /* Contributor Section */
+        .contributor-section {
+            margin-top: 30px;
+            /* Adjust spacing as needed */
+            border: 2px solid #bd93f9;
+            /* Add border around the contributor section */
+            padding: 20px;
+            /* Add padding inside the border */
+            max-width: 600px;
+            /* Set max-width for the contributor section */
+            margin-left: auto;
+            /* Center the box horizontally */
+            margin-right: auto;
+            /* Center the box horizontally */
+        }
+
+        /* Contributor */
+        .contributor {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            /* Adjust spacing between contributors */
+        }
+
+        .contributor img {
+            width: 50px;
+            /* Adjust image size */
+            height: 50px;
+            /* Adjust image size */
+            border-radius: 50%;
+            /* Make the image round */
+            margin-right: 10px;
+            /* Adjust spacing between image and name */
+        }
+
+        .contributor a {
+            text-decoration: none;
+            color: #bd93f9;
+            /* Adjust text color */
+            font-weight: bold;
+            font-size: 1.2em;
+            /* Adjust font size */
+        }
+
+        /* Add hover effect to contributors */
+        .contributor:hover {
+            background-color: #282a36;
+            /* Change background color on hover */
+        }
+
+        .contributor:hover a {
+            color: #f8f8f2;
+            /* Change text color on hover */
+        }
+
+        /* Download Button */
+        a.download-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #bd93f9;
+            color: #fff;
+            border: 2px solid #bd93f9;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        a.download-button:hover {
+            background-color: #fff;
+            color: #bd93f9;
+        }
+
+        a.download-button:active {
+            transform: translateY(2px);
+        }
+
+        .custom-media-warning {
+            background-color: #ffcc00;
+            color: #333;
+            padding: 10px;
+            max-width: 600px;
+            border-radius: 5px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 20px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+
+        #model-preview {
+            width: 100%;
+            max-width: 600px;
+            max-height: 400px;
+            margin: 0 auto;
+            background-color: #bd93f9;
+        }
+    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap">
+</head>
+
+<body>
+    <header>
+        <h1>Squishylemon's EmuVR UGC</h1>
+    </header>
+
+    <section>
+        <h2>Mattel Intellivision Pack</h2>
+        <p>Version: 1.0</p>
+
+        <!-- Description -->
+        <p>A pack that finally brings the Intellivision into emuvr with removeable controllers, voice synthesiser and a decent model. This was orginaly a static untextured model so it took alot of work to get it to this stage and my modeling/texturing skills are not the best there are imperfections known and might get fixxed in the future, other than that enjoy the Mattel Intellivision</p>
+
+        <!-- Extra Images -->
+        <img src="Images\Mattel_Intel\carts.png" alt="Carts">
+        <img src="Images\Mattel_Intel\controllerpic1.png" alt="Controller Pic1">
+        <img src="Images\Mattel_Intel\controllerpic2.png" alt="Controller Pic2">
+        <img src="Images\Mattel_Intel\IntelPic1.png" alt="IntelPic1">
+        <img src="Images\Mattel_Intel\intelpic2.png" alt="IntelPic2">
+        <img src="Images\Mattel_Intel\intelpic3.png" alt="IntelPic3">
+        <img src="Images\Mattel_Intel\intelpic4.png" alt="IntelPic4">
+        <img src="Images\Mattel_Intel\voiceSynth.png" alt="VoiceSynth">
+
+        <!-- Contributor Section -->
+        <div class="contributor-section">
+            <h3>Contributors</h3>
+            <!-- Contributor 1 -->
+            <div class="contributor">
+                <img src="Images/Contributers/squishy_logo.png" alt="Contributor Image">
+                <a href="https://github.com/squishylemon">Squishylemon</a>
+            </div>
+
+        
+
+        <!-- 3D Model Preview -->
+        <!--  <div id="model-preview"></div> -->
+
+        <div class="custom-media-warning">
+            <p>Warning: This UGC requires adding 'Mattel Intellivision VS = "Mattel Intellivision"' to your custom_media.text to have the voice synthesiser</p>
+        </div>
+
+        <!-- Download Button -->
+        <a href="https://github.com/squishylemon/LemonsEmuVRUGCs/raw/main/Downloads/mattel_intellivision_pack.zip?download=" download class="download-button">Download</a>
+
+        <!-- Optional Downloads Section -->
+        <div class="optional-downloads-section">
+            <h3>Optional Downloads</h3>
+
+            <div class="download-name">Labels Pack By TeamGT</div>
+            <ul class="download-features">
+                <li>- Crap load of labels.</li>
+                <li>- Created By TeamGT.</li>
+            </ul>
+            <a href="https://github.com/squishylemon/LemonsEmuVRUGCs/raw/main/Downloads/mattelintellivisionlabels.zip?download=" download class="buttons">Download</a>
+
+            <!-- Add more option files as needed -->
+        </div>
+
+
+
+        <!-- Credits Section -->
+        <div class="credits-section">
+            <h3>Credits</h3>
+            <ul class="credits-list">
+                <li><a href="https://archive.org/details/emuvr-ugc">TeamGT (Labels)</a></li>
+                <li><a href="https://sketchfab.com/3d-models/intellivision-12c7e333042b497e8daceb0ab1c80caa">elouisetrewartha (Base 3D Model)</a></li>
+                <!-- Add more credits as needed -->
+            </ul>
+        </div>
+
+        <!-- Back Button -->
+        <a href="index" class="buttons">Back</a>
+    </section>
+
+    <footer>
+        <p>2024 Lemons UGC's</p>
+    </footer>
+
+  
+
+</body>
+
+</html>

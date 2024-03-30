@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UGC Suggestions</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background-color: #1a1a2e;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            color: #f8f8f2;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #5d4e70;
+            padding: 20px 0;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        p {
+            font-size: 1.2em;
+        }
+
+        .category {
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid;
+            border-image: linear-gradient(to right, transparent, #5d4e70, transparent);
+            border-image-slice: 1;
+        }
+
+        .category:last-child {
+            border-bottom: none;
+        }
+
+        .category h2 {
+            margin: 10px 0;
+        }
+
+        .mods {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            scrollbar-width: none;
+            /* Firefox */
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            white-space: nowrap;
+            justify-content: center;
+        }
+
+        .mods::-webkit-scrollbar {
+            display: none;
+            /* Safari and Chrome */
+        }
+
+        .mod {
+            flex: 0 0 auto;
+            margin-right: 20px;
+            max-width: calc(25% - 20px);
+            /* 4 mods in a row */
+            text-align: left;
+        }
+
+        .mod img {
+            max-width: 100%;
+            max-height: 200px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .mod img:hover {
+            transform: scale(1.1);
+        }
+
+        .buttons-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: auto;
+            /* Push buttons to the bottom */
+            padding: 20px 0;
+        }
+
+        .buttons {
+            padding: 10px 20px;
+            background-color: #bd93f9;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .buttons:hover {
+            background-color: #6e5773;
+        }
+
+        a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .headerText {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: bold;
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* Center content horizontally */
+            padding: 20px;
+            flex-grow: 1; /* Ensure the content stretches to fill available space */
+        }
+
+        .suggestions-container {
+            width: 100%;
+            /* Take up full width */
+            max-width: 70%;
+            /* Limit width to 70% */
+        }
+
+        .submit-container {
+            width: 100%;
+            /* Take up full width */
+            max-width: 30%;
+            /* Limit width to 30% */
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 250px;
+        }
+
+        .submit-form {
+            background-color: #44475a;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .submit-form input,
+        .submit-form button {
+            margin: 10px 0;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            border: none;
+            background-color: #bd93f9;
+            color: #f8f8f2;
+            cursor: pointer;
+        }
+
+        .submit-form input[type="file"] {
+            width: auto;
+        }
+
+        .submit-form input[type="text"] {
+            width: 95%;
+        }
+
+        .submit-form img {
+            max-width: 100%;
+            max-height: 200px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .submit-form button[type="submit"] {
+            background-color: #50fa7b;
+        }
+
+        .submit-form button[type="submit"]:hover,
+        .submit-form button[type="cancel"]:hover {
+            background-color: #f1fa8c;
+        }
+
+        footer {
+            background-color: #5d4e70;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>UGC Suggestions</h1>
+    </header>
+
+    <div class="container">
+        <div class="suggestions-container" id="suggestionsContainer">
+            <!-- Suggestions will be dynamically loaded here -->
+        </div>
+    </div>
+
+    <div class="submit-container">
+        <div class="container">
+            <form class="submit-form">
+                <input type="text" placeholder="Your Name">
+                <input type="file" accept="image/*" id="thumbnail" name="thumbnail">
+                <img id="thumbnail-preview" alt="Thumbnail Preview">
+                <button type="submit">Submit</button>
+                <button type="cancel">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Your Website. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Fetch suggestions from suggestions.json
+        fetch('\\Suggestions\\suggestions.json')
+            .then(response => response.json())
+            .then(data => {
+                const suggestionsContainer = document.getElementById('suggestionsContainer');
+                data.forEach(suggestion => {
+                    const suggestionDiv = document.createElement('div');
+                    suggestionDiv.classList.add('suggestion');
+                    suggestionDiv.innerHTML = `
+                        <div class="upvotes">Upvotes: ${suggestion.upvotes}</div>
+                        <div class="suggestion-title">${suggestion.Submitter}</div>
+                        <img src="${suggestion.imgName}" alt="Thumbnail">
+                    `;
+                    suggestionsContainer.appendChild(suggestionDiv);
+                });
+            })
+            .catch(error => console.error('Error fetching suggestions:', error));
+    </script>
+
+</body>
+
+</html>

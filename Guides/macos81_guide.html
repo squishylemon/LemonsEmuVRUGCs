@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guide Template</title>
-    <link rel="shortcut icon" type="image/x-icon" href="Images/icon.ico">
+    <link rel="shortcut icon" type="../image/x-icon" href="Images/icon.ico">
     <style>
         body {
             font-family: 'Press Start 2P', cursive;
@@ -37,6 +37,59 @@
             margin: 0;
             font-size: 2em;
         }
+
+        .img169 {
+            margin: 0 auto; /* Center the image horizontally */
+            width: 500px; /* Adjust image width */
+            height: 250px; /* Adjust image height */
+            padding: 15px; /* Add padding */
+            border-radius: 10px; /* Rounded edges */
+            cursor: pointer; /* Change cursor to pointer */
+            transition: all 0.3s ease; /* Add smooth transition */
+        }
+        
+        .img169:hover {
+            transform: scale(1.5); /* Scale image on hover */
+        }
+
+        .img43 {
+            margin: 0 auto; /* Center the image horizontally */
+            width: 350px; /* Adjust image width */
+            height: 350px; /* Adjust image height */
+            padding: 15px; /* Add padding */
+            border-radius: 10px; /* Rounded edges */
+            cursor: pointer; /* Change cursor to pointer */
+            transition: all 0.3s ease; /* Add smooth transition */
+        }
+
+        .img43:hover {
+            transform: scale(1.5); /* Scale image on hover */
+        }
+
+        .img169_thumnail {
+            margin: 0 auto; /* Center the image horizontally */
+            width: 500px; /* Adjust image width */
+            height: 250px; /* Adjust image height */
+            padding: 15px; /* Add padding */
+            border-radius: 10px; /* Rounded edges */
+            cursor: pointer; /* Change cursor to pointer */
+            
+        }
+        
+        
+
+        .img43_thumnail {
+            margin: 0 auto; /* Center the image horizontally */
+            width: 350px; /* Adjust image width */
+            height: 350px; /* Adjust image height */
+            padding: 15px; /* Add padding */
+            border-radius: 10px; /* Rounded edges */
+            cursor: pointer; /* Change cursor to pointer */
+            
+        }
+
+        
+
 
         .guide-container {
             border: 2px solid #bd93f9; /* Add border around guide */
@@ -150,7 +203,7 @@
 
     <div class="guide-container"> <!-- Surround the guide with a box -->
         <div class="container">
-            <img src="Images/Guides/g3_thumnail.png" alt="Guide Image" class="guide-image">
+            <img class="img43_thumnail" src="..\Images\Guides\g3_thumnail.png" alt="Guide Image" class="guide-image">
             <div class="guide-start">
                 <p class="guide-description">Welcome to the MacOS 8.1 Installation guide for emuVR:</p>
                 <ul class="guide-list">
@@ -193,36 +246,36 @@ DETECT|crc
                 <div class="template-step">
                     <h2>Step 3: Running Fusion30 ROM</h2>
                     <p>Now that you have properly installed the Fusion30 ROM into EmuVR, you can boot up EmuVR and run the iMac with the Fusion30 ROM inserted. When turned on, you should see the generic DOS Pure start menu. If you have inserted the Fusion30 ROM into the iMac, you should see some options.</p>
-                    <img src="Images/Guides/G3/dospure_startmenu_fusionincerted.png" alt="Step 3: DOS with Fusion30 Booted">
+                    <img class="img43" src="../Images/Guides/G3/dospure_startmenu_fusionincerted.png" alt="Step 3: DOS with Fusion30 Booted">
                     <p>Using the arrow keys, navigate to the SETUP.EXE option and press Enter to open it. Once opened, you will be greeted with the Fusion30 Setup.</p>
-                    <img src="Images/Guides/G3/fusion30_setupscreen_sysinfo.png" alt="Step 3: Fusion30 system information">
+                    <img class="img43" src="../Images/Guides/G3/fusion30_setupscreen_sysinfo.png" alt="Step 3: Fusion30 system information">
                     <p>Now that Fusion30 is fully up and running, use the mouse to navigate to CONFIG and then click on SAVE CONFIG.</p>
-                    <img src="Images/Guides/G3/fusion30_setupscreen_cfgsave.png" alt="Step 3: Fusion30 system configuration">
+                    <img class="img43" src="../Images/Guides/G3/fusion30_setupscreen_cfgsave.png" alt="Step 3: Fusion30 system configuration">
                     <p>Now simply click on Save. There's no need to rename anything, and minimize EmuVR for now.</p>
                 </div>
                 <div class="template-step">
                     <h2>Step 4: Placing .ROM and HDD files</h2>
                     <p>Now that you have saved a config file, A .zip has created inside the RetroArch/saves folder called FUSION30.pure.zip, navigate over to that location and open the FUSION30.pure.zip, and place the ROM file you have and HDD file into the zip</p>
-                    <img src="Images/Guides/G3/folder_retroarchsaves.png" alt="Step 3: Fusion30 folder location">
-                    <img src="Images/Guides/G3/fusion30_zip.png" alt="Step 3: Fusion30 zip">
+                    <img class="img169" src="../Images/Guides/G3/folder_retroarchsaves.png" alt="Step 3: Fusion30 folder location">
+                    <img class="img169" src="../Images/Guides/G3/fusion30_zip.png" alt="Step 3: Fusion30 zip">
                 </div>
                 <div class="template-step">
                     <h2>Step 5: Configuring Fusion30</h2>
                     <p>Okay, now that you have properly installed the ROM file and HDD, we can configure Fusion30. Go back to EmuVR. If you closed it, reopen it and boot the iMac using the Fusion30 ROM. You should be back to the SETUP screen for Fusion30.</p>
-                    <img src="Images/Guides/G3/fusion30_setupscreen_sysinfo.png" alt="Step 5: Fusion30 system information">
+                    <img class="img43" src="../Images/Guides/G3/fusion30_setupscreen_sysinfo.png" alt="Step 5: Fusion30 system information">
                     <p>Now navigate to the MEMORY section and allocate at least 32MB of RAM. If you are limited on memory, you will need to adjust the core's memory limits in the overrides to 64MB.</p>
-                    <img src="Images/Guides/G3/fusion30_setupscreen_memory.png" alt="Step 5: Fusion30 memory">
+                    <img class="img43" src="../Images/Guides/G3/fusion30_setupscreen_memory.png" alt="Step 5: Fusion30 memory">
                     <p>Next, navigate over to ROM FILE and select the ROM file you placed in the ZIP.</p>
-                    <img src="Images/Guides/G3/fusion30_setupscreen_romfileselect.png" alt="Step 5: Fusion30 ROM file select">
+                    <img class="img43" src="../Images/Guides/G3/fusion30_setupscreen_romfileselect.png" alt="Step 5: Fusion30 ROM file select">
                     <p>Now head over to SOUND and using the arrow keys, pick a sound option. I use BLASTER.</p>
-                    <img src="Images/Guides/G3/fusion30_setupscreen_soundsettings.png" alt="Step 5: Fusion30 sound select">
+                    <img class="img43" src="../Images/Guides/G3/fusion30_setupscreen_soundsettings.png" alt="Step 5: Fusion30 sound select">
                     <p>Next, navigate over to DEVICES and select the HDD you placed into the ZIP.</p>
-                    <img src="Images/Guides/G3/fusion30_setupscreen_hdd_selecting.png" alt="Step 5: Fusion30 HDD selecting">
-                    <img src="Images/Guides/G3/fusion30_setupscreen_hdd.png" alt="Step 5: Fusion30 HDD">
+                    <img class="img43" src="../Images/Guides/G3/fusion30_setupscreen_hdd_selecting.png" alt="Step 5: Fusion30 HDD selecting">
+                    <img class="img43" src="../Images/Guides/G3/fusion30_setupscreen_hdd.png" alt="Step 5: Fusion30 HDD">
                     <p>Finally, head over to VIDEO and click SELECT. Pick the first option of LAPTOPDR FVD.</p>
-                    <img src="Images/Guides/G3/fusion30_setupscreen_video.png" alt="Step 5: Fusion30 video select">
+                    <img class="img43" src="../Images/Guides/G3/fusion30_setupscreen_video.png" alt="Step 5: Fusion30 video select">
                     <p>Now, if you click on LAUNCH EMULATOR, it should boot into MacOS 8.1.</p>
-                    <img src="Images/Guides/G3/macos_bootup.png" alt="Step 5: Bootup">
+                    <img class="img43" src="../Images/Guides/G3/macos_bootup.png" alt="Step 5: Bootup">
                     <p>Now, If you want to you can set the SETUP to be autoboot.</p>
                 </div>  
             </div>

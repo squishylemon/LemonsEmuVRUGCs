@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide Template</title>
+    <link rel="shortcut icon" type="image/x-icon" href="Images/icon.ico">
+    <style>
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background-color: #1a1a2e;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            color: #f8f8f2;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+            margin: auto;
+            /* Center text horizontally */
+        }
+
+        header {
+            background-color: #5d4e70;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        .guide-container {
+            border: 2px solid #bd93f9; /* Add border around guide */
+            padding: 20px;
+            margin: 20px auto; /* Adjust margin for centering */
+            border-radius: 10px;
+            max-width: 800px; /* Set maximum width for the guide box */
+        }
+
+        .container {
+            text-align: center;
+            margin-top: auto;
+            margin-bottom: auto;
+            position: relative; /* Relative positioning for absolute image placement */
+        }
+
+        .guide-image {
+            margin: 0 auto; /* Center the image horizontally */
+            width: 500px;
+            height: 500px;
+        }
+
+        .container p {
+            margin-top: 20px; /* Space between image and text */
+        }
+
+        .guide-description {
+            color: #ff79c6;
+            font-size: 1.2em;
+            margin: 20px 0;
+        }
+
+        .guide-list {
+            text-align: left;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+
+        .guide-list-item {
+            margin-bottom: 10px;
+        }
+
+        .code-segment {
+            background-color: #44475a;
+            color: #f8f8f2;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin-bottom: 10px;
+            max-width: 600px; /* Set maximum width for code segments */
+            margin: auto; /* Center the code segments horizontally */
+            position: relative;
+            padding-bottom: 40px; /* Add padding for button */
+            position: relative;
+        }
+
+        .code-segment pre {
+            text-align: left; /* Align text to the left within the code segment */
+            counter-reset: line; /* Reset the line counter */
+            margin: 0;
+        }
+
+        .code-segment code {
+            color: #50fa7b; /* Set code text color */
+            counter-increment: line; /* Increment the line counter */
+            display: block; /* Ensure each line is displayed as a block */
+            white-space: pre-wrap; /* Preserve white space */
+        }
+
+        .code-segment code:before {
+            content: counter(line); /* Display line number */
+            position: absolute;
+            left: -2.5em;
+            color: #ff79c6; /* Set line number color */
+        }
+
+        .copy-button {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            background-color: #bd93f9;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .copy-button:hover {
+            background-color: #6e5773;
+        }
+
+        footer {
+            background-color: #5d4e70;
+            padding: 10px 0;
+            margin-top: auto; /* Push footer to the bottom */
+            width: 100%; /* Ensure footer spans the entire width */
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Guide Template</h1>
+    </header>
+
+    <div class="guide-container"> <!-- Surround the guide with a box -->
+        <div class="container">
+            <img src="Images/guide-image.png" alt="Guide Image" class="guide-image">
+            <div class="guide-start">
+                <p class="guide-description">Welcome to our guide! Here's what you need to know:</p>
+                <ul class="guide-list">
+                    <li class="guide-list-item">This guide will help you achieve X</li>
+                    <li class="guide-list-item">You will need the following:</li>
+                    <ul>
+                        <li class="guide-list-item">Item 1</li>
+                        <li class="guide-list-item">Item 2</li>
+                        <li class="guide-list-item">Item 3</li>
+                    </ul>
+                </ul>
+            </div>
+            <div class="code-segment">
+                <pre>
+                    <code>
+// Example code segment
+function helloWorld() {
+    console.log("Hello, World!");
+}
+                    </code>
+                </pre>
+                <button class="copy-button" onclick="copyCode()">Copy Code</button>
+            </div>
+            <div class="template-steps">
+                <div class="template-step">
+                    <h2>Step 1: Description</h2>
+                    <p>Step 1 description goes here.</p>
+                </div>
+                <div class="template-step">
+                    <h2>Step 2: Description</h2>
+                    <p>Step 2 description goes here.</p>
+                    <img src="Images/step2-image.png" alt="Step 2 Image">
+                </div>
+                <div class="template-step">
+                    <h2>Step 3: Description</h2>
+                    <p>Step 3 description goes here.</p>
+                    <img src="Images/step3-image.png" alt="Step 3 Image">
+                </div>
+            </div>
+            <div class="button-container">
+                <a href="../guideIndex" class="button">Back to Guides</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Lemons UGC's</p>
+    </footer>
+
+    <script>
+        function copyCode() {
+            /* Get the text content of the code segment */
+            var codeSegment = document.querySelector('.code-segment code').textContent;
+
+            /* Create a temporary textarea element */
+            var tempTextarea = document.createElement('textarea');
+            tempTextarea.value = codeSegment;
+
+            /* Append the textarea to the body */
+            document.body.appendChild(tempTextarea);
+
+            /* Select the text within the textarea */
+            tempTextarea.select();
+            tempTextarea.setSelectionRange(0, 99999); /* For mobile devices */
+
+            /* Copy the selected text */
+            document.execCommand('copy');
+
+            /* Remove the temporary textarea */
+            document.body.removeChild(tempTextarea);
+
+            /* Provide visual feedback */
+            alert('Code copied to clipboard!');
+        }
+    </script>
+</body>
+</html>

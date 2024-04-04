@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide Template</title>
+    <link rel="shortcut icon" type="image/x-icon" href="Images/icon.ico">
+    <style>
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background-color: #1a1a2e;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            color: #f8f8f2;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+            margin: auto;
+            /* Center text horizontally */
+        }
+
+        header {
+            background-color: #5d4e70;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        .guide-container {
+            border: 2px solid #bd93f9; /* Add border around guide */
+            padding: 20px;
+            margin: 20px auto; /* Adjust margin for centering */
+            border-radius: 10px;
+            max-width: 800px; /* Set maximum width for the guide box */
+        }
+
+        .container {
+            text-align: center;
+            margin-top: auto;
+            margin-bottom: auto;
+            position: relative; /* Relative positioning for absolute image placement */
+        }
+
+        .guide-image {
+            margin: 0 auto; /* Center the image horizontally */
+            width: 500px;
+            height: 500px;
+        }
+
+        .container p {
+            margin-top: 20px; /* Space between image and text */
+        }
+
+        .guide-description {
+            color: #ff79c6;
+            font-size: 1.2em;
+            margin: 20px 0;
+        }
+
+        .guide-list {
+            text-align: left;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+
+        .guide-list-item {
+            margin-bottom: 10px;
+        }
+
+        .code-segment {
+            background-color: #44475a;
+            color: #f8f8f2;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin-bottom: 10px;
+            max-width: 410px; /* Set maximum width for code segments */
+            
+            margin: auto; /* Center the code segments horizontally */
+            position: relative;
+            padding-bottom: 10px; /* Add padding for button */
+            position: relative;
+        }
+
+        .code-segment pre {
+            text-align: left; /* Align text to the left within the code segment */
+            counter-reset: line; /* Reset the line counter */
+            margin: 0;
+        }
+
+        .code-segment code {
+            color: #50fa7b; /* Set code text color */
+            counter-increment: line; /* Increment the line counter */
+            display: block; /* Ensure each line is displayed as a block */
+            white-space: pre-wrap; /* Preserve white space */
+        }
+
+        .code-segment code:before {
+            content: counter(line); /* Display line number */
+            position: absolute;
+            left: -2.5em;
+            color: #ff79c6; /* Set line number color */
+        }
+
+        .copy-button {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            background-color: #bd93f9;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .copy-button:hover {
+            background-color: #6e5773;
+        }
+
+        footer {
+            background-color: #5d4e70;
+            padding: 10px 0;
+            margin-top: auto; /* Push footer to the bottom */
+            width: 100%; /* Ensure footer spans the entire width */
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>EMUVR MacOS 8.1 Installation</h1>
+    </header>
+
+    <div class="guide-container"> <!-- Surround the guide with a box -->
+        <div class="container">
+            <img src="Images/Guides/g3_thumnail.png" alt="Guide Image" class="guide-image">
+            <div class="guide-start">
+                <p class="guide-description">Welcome to the MacOS 8.1 Installation guide for emuVR:</p>
+                <ul class="guide-list">
+                    <li class="guide-list-item">This guide will help you install MacOS 8.1 for the iMac G3 via DOS.</li>
+                    <li class="guide-list-item">You will need the following:</li>
+                    <ul>
+                        <li class="guide-list-item">A valid 68020, 68030, or 68040 compatible Macintosh ROM</li>
+                        <li class="guide-list-item">Hard drive file</li>
+                        <li class="guide-list-item">Fusion30, which can be downloaded <a href="https://github.com/squishylemon/LemonsEmuVRUGCs/raw/main/Downloads/FUSION30.zip?download=">here</a></li>
+                    </ul>
+                </ul>
+            </div>            
+            <div class="template-steps">
+                <div class="template-step">
+                    <h2>Step 1: Adding Mac G3 Custom Media</h2>
+                    <p>Add the following code to your Custom_media.txt</p>
+                    <div class="code-segment">
+                        <pre>
+                            <code>
+MacG3 (CD) = "DOS (CD)|wgc_libretro|Commodore Amiga (CD)"
+                            </code>
+                        </pre>
+                        <button class="copy-button" onclick="copyCode()">Copy Code</button>
+                    </div>
+                </div>
+                <div class="template-step">
+                    <h2>Step 2: Manually adding Fusion30 to the playlist</h2>
+                    <p>For some reason, the gamescanner will not recognize the Fusion30 as a ROM. So, to fix this, we will need to manually add it. However, please note that each time you scan for new games, it will remove Fusion30, and you will need to re-add it. Copy the code below and paste it into your emuvr_playlist.txt file.</p>
+                    <div class="code-segment">
+                        <pre>
+                            <code>
+Games\G3\FUSION30.zip
+FUSION30
+DETECT|crc
+                            </code>
+                        </pre>
+                        <button class="copy-button" onclick="copyCode()">Copy Code</button>
+                    </div>
+                </div>
+                <div class="template-step">
+                    <h2>Step 3: Running Fusion30 ROM</h2>
+                    <p>Now that you have properly installed the Fusion30 ROM into EmuVR, you can boot up EmuVR and run the iMac with the Fusion30 ROM inserted. When turned on, you should see the generic DOS Pure start menu. If you have inserted the Fusion30 ROM into the iMac, you should see some options.</p>
+                    <img src="Images/Guides/G3/dospure_startmenu_fusionincerted.png" alt="Step 3: DOS with Fusion30 Booted">
+                    <p>Using the arrow keys, navigate to the SETUP.EXE option and press Enter to open it. Once opened, you will be greeted with the Fusion30 Setup.</p>
+                    <img src="Images/Guides/G3/fusion30_setupscreen_sysinfo.png" alt="Step 3: Fusion30 system information">
+                    <p>Now that Fusion30 is fully up and running, use the mouse to navigate to CONFIG and then click on SAVE CONFIG.</p>
+                    <img src="Images/Guides/G3/fusion30_setupscreen_cfgsave.png" alt="Step 3: Fusion30 system configuration">
+                    <p>Now simply click on Save. There's no need to rename anything, and minimize EmuVR for now.</p>
+                </div>
+                <div class="template-step">
+                    <h2>Step 4: Placing .ROM and HDD files</h2>
+                    <p>Now that you have saved a config file, A .zip has created inside the RetroArch/saves folder called FUSION30.pure.zip, navigate over to that location and open the FUSION30.pure.zip, and place the ROM file you have and HDD file into the zip</p>
+                    <img src="Images/Guides/G3/folder_retroarchsaves.png" alt="Step 3: Fusion30 folder location">
+                    <img src="Images/Guides/G3/fusion30_zip.png" alt="Step 3: Fusion30 zip">
+                </div>
+                <div class="template-step">
+                    <h2>Step 5: Configuring Fusion30</h2>
+                    <p>Okay, now that you have properly installed the ROM file and HDD, we can configure Fusion30. Go back to EmuVR. If you closed it, reopen it and boot the iMac using the Fusion30 ROM. You should be back to the SETUP screen for Fusion30.</p>
+                    <img src="Images/Guides/G3/fusion30_setupscreen_sysinfo.png" alt="Step 5: Fusion30 system information">
+                    <p>Now navigate to the MEMORY section and allocate at least 32MB of RAM. If you are limited on memory, you will need to adjust the core's memory limits in the overrides to 64MB.</p>
+                    <img src="Images/Guides/G3/fusion30_setupscreen_memory.png" alt="Step 5: Fusion30 memory">
+                    <p>Next, navigate over to ROM FILE and select the ROM file you placed in the ZIP.</p>
+                    <img src="Images/Guides/G3/fusion30_setupscreen_romfileselect.png" alt="Step 5: Fusion30 ROM file select">
+                    <p>Now head over to SOUND and using the arrow keys, pick a sound option. I use BLASTER.</p>
+                    <img src="Images/Guides/G3/fusion30_setupscreen_soundsettings.png" alt="Step 5: Fusion30 sound select">
+                    <p>Next, navigate over to DEVICES and select the HDD you placed into the ZIP.</p>
+                    <img src="Images/Guides/G3/fusion30_setupscreen_hdd_selecting.png" alt="Step 5: Fusion30 HDD selecting">
+                    <img src="Images/Guides/G3/fusion30_setupscreen_hdd.png" alt="Step 5: Fusion30 HDD">
+                    <p>Finally, head over to VIDEO and click SELECT. Pick the first option of LAPTOPDR FVD.</p>
+                    <img src="Images/Guides/G3/fusion30_setupscreen_video.png" alt="Step 5: Fusion30 video select">
+                    <p>Now, if you click on LAUNCH EMULATOR, it should boot into MacOS 8.1.</p>
+                    <img src="Images/Guides/G3/macos_bootup.png" alt="Step 5: Bootup">
+                    <p>Now, If you want to you can set the SETUP to be autoboot.</p>
+                </div>  
+            </div>
+            <div class="button-container">
+                <a href="../guideIndex" class="button">Back to Guides</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Lemons UGC's</p>
+    </footer>
+
+    <script>
+        function copyCode() {
+            /* Get the text content of the code segment */
+            var codeSegment = document.querySelector('.code-segment code').textContent;
+
+            /* Create a temporary textarea element */
+            var tempTextarea = document.createElement('textarea');
+            tempTextarea.value = codeSegment;
+
+            /* Append the textarea to the body */
+            document.body.appendChild(tempTextarea);
+
+            /* Select the text within the textarea */
+            tempTextarea.select();
+            tempTextarea.setSelectionRange(0, 99999); /* For mobile devices */
+
+            /* Copy the selected text */
+            document.execCommand('copy');
+
+            /* Remove the temporary textarea */
+            document.body.removeChild(tempTextarea);
+
+            /* Provide visual feedback */
+            alert('Code copied to clipboard!');
+        }
+    </script>
+</body>
+</html>

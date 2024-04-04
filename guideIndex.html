@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide Index</title>
+    <link rel="shortcut icon" type="image/x-icon" href="Images/icon.ico">
+    <style>
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background-color: #1a1a2e;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            color: #f8f8f2;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #5d4e70;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        footer {
+            background-color: #5d4e70;
+            padding: 10px 0;
+            margin-top: auto;
+            /* Push footer to the bottom */
+            width: 100%;
+            /* Ensure footer spans the entire width */
+        }
+
+        .container {
+            text-align: center;
+            margin-top: auto;
+            margin-bottom: auto;
+            position: relative;
+            /* Relative positioning for absolute image placement */
+        }
+
+        .under-construction-image {
+            margin: 0 auto;
+            /* Center the image horizontally */
+            width: 500px;
+            height: 500px;
+        }
+
+        .container p {
+            margin-top: 20px;
+            /* Space between image and text */
+        }
+
+        .category-container {
+            border: 2px solid #bd93f9;
+            /* Add border around category container */
+            padding: 10px;
+            /* Add padding inside category container */
+            border-radius: 5px;
+            /* Add rounded corners */
+            max-width: 600px;
+            /* Add maximum width */
+            margin: 0 auto;
+            /* Center category container */
+            overflow: hidden;
+            /* Hide overflow content */
+        }
+
+        .category {
+            display: none;
+            /* Hide categories by default */
+            margin-bottom: 20px;
+        }
+
+        .category-title {
+            color: #bfbfbf;
+            /* Change category title color */
+            font-size: 24px;
+            margin: 10px;
+            cursor: pointer;
+            /* Add pointer cursor for clickable effect */
+            /* No arrow */
+        }
+
+        .category-title:hover {
+            color: #6e5773;
+            /* Change color on hover */
+        }
+
+        .category-title.active {
+            color: #bd93f9;
+            /* Change color for active category */
+        }
+
+        .guide-link {
+            color: #bd93f9;
+            text-decoration: none;
+            font-size: 20px;
+            margin: 10px;
+            display: block;
+        }
+
+        .guide-link:hover {
+            color: #6e5773;
+        }
+
+        .categoryHeader {
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid;
+            border-image: linear-gradient(to right, transparent, #5d4e70, transparent);
+            border-image-slice: 1;
+        }
+
+        .categoryHeader:last-child {
+            border-bottom: none;
+        }
+
+        .categoryHeader h2 {
+            margin: 10px 0;
+        }
+
+        .headerText {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: bold;
+            margin-top: 10px;
+            margin-left: 10px;
+            /* Adjust margin to separate buttons */
+            display: inline-block;
+            /* Display links horizontally */
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Guide Index</h1>
+
+        <div class="categoryHeader">
+            <a class="headerText" href="underc">Suggest</a>
+            <a class="headerText" href="index">Index</a>
+            <a class="headerText" href="underc">About</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="category-container">
+            <h2 class="category-title" onclick="toggleCategory('category1')">Other</h2>
+            <div class="category" id="category1">
+                <a href="Guides/macos81_guide" class="guide-link">Installing MacOS 8.1</a>
+                
+                <!-- Add more guide links for Category 1 here -->
+            </div>
+            <!-- Add more categories as needed -->
+        </div>
+    </div>
+
+    <footer>
+        <p>2024 Lemons UGC's</p>
+    </footer>
+
+    <script>
+        function toggleCategory(categoryId) {
+            var category = document.getElementById(categoryId);
+            var categoryTitle = document.querySelector('#' + categoryId);
+            if (category && categoryTitle) {
+                if (category.style.display === 'none' || category.style.display === '') {
+                    category.style.display = 'block';
+                    category.classList.add('active');
+                    categoryTitle.classList.add('active');
+                } else {
+                    category.style.display = 'none';
+                    category.classList.remove('active');
+                    categoryTitle.classList.remove('active');
+                }
+            } else {
+                console.error("Category or category title not found.");
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>

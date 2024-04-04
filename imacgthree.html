@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lemons UGC | IMac G3</title>
+    <link rel="shortcut icon" type="image/x-icon" href="Images/icon.ico">
+    <style>
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background-color: #1a1a2e;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            color: #f8f8f2;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #5d4e70;
+            padding: 20px 0;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        p {
+            font-size: 1.2em;
+        }
+
+        section {
+            flex: 1;
+            padding: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 300px;
+            /* Adjust the max height as needed */
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #bd93f9;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #bd93f9;
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+
+        footer {
+            background-color: #5d4e70;
+            padding: 10px 0;
+        }
+
+        .update-section {
+            margin-top: 30px;
+            /* Increased gap between version and updates */
+            text-align: center;
+            /* Center the entire updates section horizontally */
+            border: 2px solid #bd93f9;
+            /* Add border around the updates section */
+            padding: 10px;
+            /* Add padding inside the border */
+            max-width: 600px;
+            /* Set max-width for the updates box */
+            margin-left: auto;
+            /* Center the box horizontally */
+            margin-right: auto;
+            /* Center the box horizontally */
+        }
+
+        .update-version {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            /* Increased space between version and updates */
+        }
+
+        .update-changes {
+            list-style-type: none;
+            /* Remove default list styles */
+            padding: 0;
+            margin: 0;
+            text-align: left;
+            /* Align the entire list to the left */
+        }
+
+        .update-changes li {
+            margin-bottom: 10px;
+            /* Add some spacing between items */
+        }
+
+        .credits-section {
+            text-align: center;
+            /* Center the entire credits section horizontally */
+            margin-top: 20px;
+            /* Add some space between updates and credits */
+        }
+
+        .credits-list {
+            list-style-type: none;
+            /* Remove default list styles */
+            padding: 0;
+            margin: 0;
+        }
+
+        .credits-list li {
+            margin-bottom: 10px;
+            /* Add some spacing between credits items */
+        }
+
+        .download-name {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            /* Increased space between version and updates */
+        }
+
+        .optional-downloads-section {
+            margin-top: 30px;
+            /* Increased gap between version and updates */
+            text-align: center;
+            /* Center the entire updates section horizontally */
+            border: 2px solid #bd93f9;
+            /* Add border around the updates section */
+            padding: 10px;
+            /* Add padding inside the border */
+            max-width: 600px;
+            /* Set max-width for the updates box */
+            margin-left: auto;
+            /* Center the box horizontally */
+            margin-right: auto;
+            /* Center the box horizontally */
+        }
+
+        .optional-downloads-section .download-name {
+            margin-top: 15px;
+            /* Add vertical spacing between the optional downloads button and each optional file */
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            /* Increased space between version and updates */
+        }
+
+        .download-features {
+            list-style-type: none;
+            /* Remove default list styles */
+            padding: 0;
+            margin: 0;
+            text-align: left;
+            /* Align the entire list to the left */
+        }
+
+        /* Contributor Section */
+        .contributor-section {
+            margin-top: 30px;
+            /* Adjust spacing as needed */
+            border: 2px solid #bd93f9;
+            /* Add border around the contributor section */
+            padding: 20px;
+            /* Add padding inside the border */
+            max-width: 600px;
+            /* Set max-width for the contributor section */
+            margin-left: auto;
+            /* Center the box horizontally */
+            margin-right: auto;
+            /* Center the box horizontally */
+        }
+
+        /* Contributor */
+        .contributor {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            /* Adjust spacing between contributors */
+        }
+
+        .contributor img {
+            width: 50px;
+            /* Adjust image size */
+            height: 50px;
+            /* Adjust image size */
+            border-radius: 50%;
+            /* Make the image round */
+            margin-right: 10px;
+            /* Adjust spacing between image and name */
+        }
+
+        .contributor a {
+            text-decoration: none;
+            color: #bd93f9;
+            /* Adjust text color */
+            font-weight: bold;
+            font-size: 1.2em;
+            /* Adjust font size */
+        }
+
+        /* Add hover effect to contributors */
+        .contributor:hover {
+            background-color: #282a36;
+            /* Change background color on hover */
+        }
+
+        .contributor:hover a {
+            color: #f8f8f2;
+            /* Change text color on hover */
+        }
+
+        /* Download Button */
+        a.download-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #bd93f9;
+            color: #fff;
+            border: 2px solid #bd93f9;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        a.download-button:hover {
+            background-color: #fff;
+            color: #bd93f9;
+        }
+
+        a.download-button:active {
+            transform: translateY(2px);
+        }
+
+        .custom-media-warning {
+            background-color: #ffcc00;
+            color: #333;
+            padding: 10px;
+            max-width: 600px;
+            border-radius: 5px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 20px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+
+        #model-preview {
+            width: 100%;
+            max-width: 600px;
+            max-height: 400px;
+            margin: 0 auto;
+            background-color: #bd93f9;
+        }
+    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap">
+</head>
+
+<body>
+    <header>
+        <h1>Squishylemon's EmuVR UGC</h1>
+    </header>
+
+    <section>
+        <h2>Imac G3</h2>
+        <p>Version: 2.0</p>
+
+        <!-- Description -->
+        <p>This is the iMac G3, now fully interactable. Originally made by War Wolf, it was later converted to a system with macOS 8.1 support. This version also separates the keyboard and mouse. This UGC uses the doscore as there is no official macOS 8.1+ core for RetroArch and is intended to run an emulator called Fusion30. I have written a guide <a href="https://squishylemon.github.io/LemonsEmuVRUGCs/Guides/macos81_guide">here</a> which you can follow to install macOS 8.1 on this iMac G3.</p>
+
+        <!-- Extra Images -->
+        <img src="Images/G3/sidepic.png" alt="Side profile 1">
+        <img src="Images/G3/sidepic2.png" alt="Side profile 2">
+
+        <!-- Contributor Section -->
+        <div class="contributor-section">
+            <h3>Contributors</h3>
+            <!-- Contributor 1 -->
+            <div class="contributor">
+                <img src="Images/Contributers/squishy_logo.png" alt="Contributor Image">
+                <a href="https://github.com/squishylemon">Squishylemon</a>
+            </div>
+
+            <!-- Contributor 2 -->
+            <div class="contributor">
+                <img src="Images/Contributers/war_wolf.png" alt="Contributor Image">
+                <a href="https://www.youtube.com/channel/UCTpkgSfurTUi8xNEZz3tZMw?sub_confirmation=1">War Wolf</a>
+            </div>
+            <!-- Add more contributors as needed -->
+        </div>
+
+
+        <!-- 3D Model Preview -->
+        <!--  <div id="model-preview"></div> -->
+
+        <div class="custom-media-warning">
+            <p>Warning: This UGC requires adding 'MacG3 (CD) = "DOS (CD)|wgc_libretro|Commodore Amiga (CD)"' to your custom_media.text</p>
+        </div>
+
+        <!-- Download Button -->
+        <a href="https://github.com/squishylemon/LemonsEmuVRUGCs/raw/main/Downloads/IMacG3Pack.zip?download=" download class="download-button">Download</a>
+
+        
+
+        
+
+        <!-- Credits Section -->
+        <div class="credits-section">
+            <h3>Credits</h3>
+            <ul class="credits-list">
+                <li><a href="https://www.youtube.com/channel/UCTpkgSfurTUi8xNEZz3tZMw?sub_confirmation=1">War Wolf ( Original Creator )</a></li>
+                <li><a href="https://sketchfab.com/3d-models/imac-g3-upgraded-6b5974d30eb640d294f86c9ad43443e4">BlackGorn860 [Creator Of the Models]</a></li>
+                <!-- Add more credits as needed -->
+            </ul>
+        </div>
+
+        <!-- Back Button -->
+        <a href="index" class="buttons">Back</a>
+    </section>
+
+    <footer>
+        <p>2024 Lemons UGC's</p>
+    </footer>
+
+</body>
+
+</html>

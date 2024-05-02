@@ -39,7 +39,8 @@
 
         img {
             max-width: 100%;
-            max-height: 300px; /* Adjust the max height as needed */
+            max-height: 300px;
+            /* Adjust the max height as needed */
             height: auto;
             border-radius: 5px;
             margin-bottom: 20px;
@@ -67,32 +68,208 @@
             background-color: #5d4e70;
             padding: 10px 0;
         }
-        
+
         .update-section {
-            margin-top: 30px; /* Increased gap between version and updates */
-            text-align: center; /* Center the entire updates section horizontally */
-            border: 2px solid #bd93f9; /* Add border around the updates section */
-            padding: 10px; /* Add padding inside the border */
-            max-width: 600px; /* Set max-width for the updates box */
-            margin-left: auto; /* Center the box horizontally */
-            margin-right: auto; /* Center the box horizontally */
+            margin-top: 30px;
+            /* Increased gap between version and updates */
+            text-align: center;
+            /* Center the entire updates section horizontally */
+            border: 2px solid #bd93f9;
+            /* Add border around the updates section */
+            padding: 10px;
+            /* Add padding inside the border */
+            max-width: 600px;
+            /* Set max-width for the updates box */
+            margin-left: auto;
+            /* Center the box horizontally */
+            margin-right: auto;
+            /* Center the box horizontally */
         }
 
         .update-version {
             font-size: 1.5em;
             font-weight: bold;
-            margin-bottom: 15px; /* Increased space between version and updates */
+            margin-bottom: 15px;
+            /* Increased space between version and updates */
         }
 
         .update-changes {
-            list-style-type: none; /* Remove default list styles */
+            list-style-type: none;
+            /* Remove default list styles */
             padding: 0;
             margin: 0;
-            text-align: left; /* Align the entire list to the left */
+            text-align: left;
+            /* Align the entire list to the left */
         }
 
         .update-changes li {
-            margin-bottom: 10px; /* Add some spacing between items */
+            margin-bottom: 10px;
+            /* Add some spacing between items */
+        }
+
+        .credits-section {
+            text-align: center;
+            /* Center the entire credits section horizontally */
+            margin-top: 20px;
+            /* Add some space between updates and credits */
+        }
+
+        .credits-list {
+            list-style-type: none;
+            /* Remove default list styles */
+            padding: 0;
+            margin: 0;
+        }
+
+        .credits-list li {
+            margin-bottom: 10px;
+            /* Add some spacing between credits items */
+        }
+
+        .download-name {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            /* Increased space between version and updates */
+        }
+
+        .optional-downloads-section {
+            margin-top: 30px;
+            /* Increased gap between version and updates */
+            text-align: center;
+            /* Center the entire updates section horizontally */
+            border: 2px solid #bd93f9;
+            /* Add border around the updates section */
+            padding: 10px;
+            /* Add padding inside the border */
+            max-width: 600px;
+            /* Set max-width for the updates box */
+            margin-left: auto;
+            /* Center the box horizontally */
+            margin-right: auto;
+            /* Center the box horizontally */
+        }
+
+        .optional-downloads-section .download-name {
+            margin-top: 15px;
+            /* Add vertical spacing between the optional downloads button and each optional file */
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            /* Increased space between version and updates */
+        }
+
+        .download-features {
+            list-style-type: none;
+            /* Remove default list styles */
+            padding: 0;
+            margin: 0;
+            text-align: left;
+            /* Align the entire list to the left */
+        }
+
+        /* Contributor Section */
+        .contributor-section {
+            margin-top: 30px;
+            /* Adjust spacing as needed */
+            border: 2px solid #bd93f9;
+            /* Add border around the contributor section */
+            padding: 20px;
+            /* Add padding inside the border */
+            max-width: 600px;
+            /* Set max-width for the contributor section */
+            margin-left: auto;
+            /* Center the box horizontally */
+            margin-right: auto;
+            /* Center the box horizontally */
+        }
+
+        /* Contributor */
+        .contributor {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            /* Adjust spacing between contributors */
+        }
+
+        .contributor img {
+            width: 50px;
+            /* Adjust image size */
+            height: 50px;
+            /* Adjust image size */
+            border-radius: 50%;
+            /* Make the image round */
+            margin-right: 10px;
+            /* Adjust spacing between image and name */
+        }
+
+        .contributor a {
+            text-decoration: none;
+            color: #bd93f9;
+            /* Adjust text color */
+            font-weight: bold;
+            font-size: 1.2em;
+            /* Adjust font size */
+        }
+
+        /* Add hover effect to contributors */
+        .contributor:hover {
+            background-color: #282a36;
+            /* Change background color on hover */
+        }
+
+        .contributor:hover a {
+            color: #f8f8f2;
+            /* Change text color on hover */
+        }
+
+        /* Download Button */
+        a.download-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #bd93f9;
+            color: #fff;
+            border: 2px solid #bd93f9;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        a.download-button:hover {
+            background-color: #fff;
+            color: #bd93f9;
+        }
+
+        a.download-button:active {
+            transform: translateY(2px);
+        }
+
+        .custom-media-warning {
+            background-color: #ffcc00;
+            color: #333;
+            padding: 10px;
+            max-width: 600px;
+            border-radius: 5px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 20px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+
+        #model-preview {
+            width: 100%;
+            max-width: 600px;
+            max-height: 400px;
+            margin: 0 auto;
+            background-color: #bd93f9;
         }
     </style>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap">
@@ -148,6 +325,23 @@
         <img src="Images/C64/fullcass.png" alt="Cassette Setup">
         <img src="Images/C64/fulldisck.png" alt="Disk Setup">
         
+        <!-- Optional Downloads Section -->
+        <div class="optional-downloads-section">
+            <h3>Optional Downloads</h3>
+
+            <div class="download-name">C64 Coverpack Update 01.05.2024</div>
+            <ul class="download-features">
+
+            </ul>
+            <a href="https://github.com/squishylemon/LemonsEmuVRUGCs/raw/main/Downloads/Coverpack%20V.3.0%20C64.zip?download=" download class="buttons">Download</a>
+
+            <div class="download-name">Commodore 64 UGC for Cover Box Cartridge Disk & Tape V3.0</div>
+            <ul class="download-features">
+
+            </ul>
+            <a href="https://github.com/squishylemon/LemonsEmuVRUGCs/raw/main/Downloads/C64%20(Box%20Cover%20CRT%20Tape%20&%20Disk)%20V.3.0%20by%20Mastertronic.zip?download=" download class="buttons">Download</a>
+            <!-- Add more option files as needed -->
+        </div>
 
         <!-- Download Button -->
         <a href="https://github.com/squishylemon/LemonsEmuVRUGCs/raw/main/Downloads/mega_c64_pack.zip?download=" download class="buttons">Download</a>
